@@ -1,88 +1,3 @@
---- gimageview-0.2.1/Makefile.am~	2004-07-16 04:34:14.000000000 +0000
-+++ gimageview-0.2.1/Makefile.am	2004-07-16 04:34:14.000000000 +0000
-@@ -2,19 +2,19 @@
- 
- CLEANFILES = *~ .deps/* .*.swp .*.swo
- 
--#desktopdir = $(DESTDIR)$(datadir)/gnome/apps/Graphics
-+#desktopdir = $(datadir)/gnome/apps/Graphics
- #desktop_in_files = gimv.desktop.in
- #desktop_DATA = $(desktop_in_files:.desktop.in=.desktop) 
- #@XML_I18N_MERGE_DESKTOP_RULE@
- 
--prefsdir = $(DESTDIR)$(gimv_datadir)
-+prefsdir = $(gimv_datadir)
- prefs_DATA =		\
- 	gtkrc
- 
--endocdir = $(DESTDIR)$(gimv_docdir)/text/C
-+endocdir = $(gimv_docdir)/text/C
- endoc_DATA = COPYING
- 
--jadocdir = $(DESTDIR)$(gimv_docdir)/text/ja
-+jadocdir = $(gimv_docdir)/text/ja
- jadoc_DATA =		\
- 	COPYING.jp	\
- 	ChangeLog.jp	\
---- gimageview-0.2.1/Makefile.in~	2004-07-16 04:34:12.000000000 +0000
-+++ gimageview-0.2.1/Makefile.in	2004-07-16 04:34:12.000000000 +0000
-@@ -128,19 +128,19 @@
- 
- CLEANFILES = *~ .deps/* .*.swp .*.swo
- 
--#desktopdir = $(DESTDIR)$(datadir)/gnome/apps/Graphics
-+#desktopdir = $(datadir)/gnome/apps/Graphics
- #desktop_in_files = gimv.desktop.in
- #desktop_DATA = $(desktop_in_files:.desktop.in=.desktop) 
- #@XML_I18N_MERGE_DESKTOP_RULE@
- 
--prefsdir = $(DESTDIR)$(gimv_datadir)
-+prefsdir = $(gimv_datadir)
- prefs_DATA =  	gtkrc
- 
- 
--endocdir = $(DESTDIR)$(gimv_docdir)/text/C
-+endocdir = $(gimv_docdir)/text/C
- endoc_DATA = COPYING
- 
--jadocdir = $(DESTDIR)$(gimv_docdir)/text/ja
-+jadocdir = $(gimv_docdir)/text/ja
- jadoc_DATA =  	COPYING.jp		ChangeLog.jp		README.jp		INSTALL.jp		TIPS.jp
- 
- 
---- gimageview-0.2.1/doc/Makefile.am~	2004-07-16 05:50:11.000000000 +0000
-+++ gimageview-0.2.1/doc/Makefile.am	2004-07-16 05:50:11.000000000 +0000
-@@ -1,4 +1,4 @@
--jahtmldir =  $(DESTDIR)$(gimv_docdir)/html/ja
-+jahtmldir =  $(gimv_docdir)/html/ja
- jahtml_DATA =			\
- 	gimageview.css		\
- 	gimageview.html		\
-@@ -15,7 +15,7 @@
- 	gimageview-11.html	\
- 	gimageview-12.html
- 
--jatextdir = $(DESTDIR)$(gimv_docdir)/text/ja
-+jatextdir = $(gimv_docdir)/text/ja
- jatext_DATA =		\
- 	gimageview.txt
- 
---- gimageview-0.2.1/doc/Makefile.in~	2004-07-16 05:50:33.000000000 +0000
-+++ gimageview-0.2.1/doc/Makefile.in	2004-07-16 05:50:33.000000000 +0000
-@@ -124,11 +124,11 @@
- localedir = @localedir@
- plugindir = @plugindir@
- 
--jahtmldir = $(DESTDIR)$(gimv_docdir)/html/ja
-+jahtmldir = $(gimv_docdir)/html/ja
- jahtml_DATA =  	gimageview.css			gimageview.html			gimageview-1.html		gimageview-2.html		gimageview-3.html		gimageview-4.html		gimageview-5.html		gimageview-6.html		gimageview-7.html		gimageview-8.html		gimageview-9.html		gimageview-10.html		gimageview-11.html		gimageview-12.html
- 
- 
--jatextdir = $(DESTDIR)$(gimv_docdir)/text/ja
-+jatextdir = $(gimv_docdir)/text/ja
- jatext_DATA =  	gimageview.txt
- 
- 
 --- gimageview-0.2.1/src/pixmaps/Makefile.am~	2004-07-16 06:10:01.000000000 +0000
 +++ gimageview-0.2.1/src/pixmaps/Makefile.am	2004-07-16 06:10:01.000000000 +0000
 @@ -1,4 +1,4 @@
@@ -167,4 +82,59 @@
 +thumbnail_plugindir = $(plugindir)/$(THUMBNAIL_PLUGIN_DIR)
  
  INCLUDES = -I$(top_srcdir)/src $(GTK_CFLAGS)
+ 
+--- gimageview-0.2.25/Makefile.am~	2004-07-16 07:56:16.000000000 +0000
++++ gimageview-0.2.25/Makefile.am	2004-07-16 07:56:16.000000000 +0000
+@@ -4,7 +4,7 @@
+ 
+ CLEANFILES = *~ .deps/* .*.swp .*.swo
+ 
+-endocdir = $(DESTDIR)$(gimv_docdir)/text/C
++endocdir = $(gimv_docdir)/text/C
+ endoc_DATA = \
+ 	AUTHORS \
+ 	COPYING \
+--- gimageview-0.2.25/Makefile.in~	2004-07-16 07:56:36.000000000 +0000
++++ gimageview-0.2.25/Makefile.in	2004-07-16 07:56:36.000000000 +0000
+@@ -205,7 +205,7 @@
+ 
+ CLEANFILES = *~ .deps/* .*.swp .*.swo
+ 
+-endocdir = $(DESTDIR)$(gimv_docdir)/text/C
++endocdir = $(gimv_docdir)/text/C
+ endoc_DATA =  	AUTHORS 	COPYING 	ChangeLog 	README 	INSTALL 	NEWS 	TODO 	HACKING
+ 
+ 
+--- gimageview-0.2.25/doc/ja/Makefile.am~	2004-07-16 07:57:17.000000000 +0000
++++ gimageview-0.2.25/doc/ja/Makefile.am	2004-07-16 07:57:17.000000000 +0000
+@@ -1,4 +1,4 @@
+-jahtmldir =  $(DESTDIR)$(gimv_docdir)/html/ja
++jahtmldir =  $(gimv_docdir)/html/ja
+ jahtml_DATA = \
+ 	gimageview.css \
+ 	index.html \
+@@ -16,7 +16,7 @@
+ 	document.html \
+ 	changelog.html
+ 
+-jatextdir = $(DESTDIR)$(gimv_docdir)/text/ja
++jatextdir = $(gimv_docdir)/text/ja
+ jatext_DATA = \
+ 	COPYING.ja \
+ 	ChangeLog.ja \
+--- gimageview-0.2.25/doc/ja/Makefile.in~	2004-07-16 07:57:29.000000000 +0000
++++ gimageview-0.2.25/doc/ja/Makefile.in	2004-07-16 07:57:29.000000000 +0000
+@@ -199,11 +199,11 @@
+ localedir = @localedir@
+ plugindir = @plugindir@
+ 
+-jahtmldir = $(DESTDIR)$(gimv_docdir)/html/ja
++jahtmldir = $(gimv_docdir)/html/ja
+ jahtml_DATA =  	gimageview.css 	index.html 	01.html 	02.html 	03.html 	04.html 	05.html 	06.html 	07.html 	gimv_faq.html 	gimv_tips.html 	gimv_history.html 	todo.html 	document.html 	changelog.html
+ 
+ 
+-jatextdir = $(DESTDIR)$(gimv_docdir)/text/ja
++jatextdir = $(gimv_docdir)/text/ja
+ jatext_DATA =  	COPYING.ja 	ChangeLog.ja 	README.ja 	INSTALL.ja 	NEWS.ja 	TODO.ja 	gimageview.txt
+ 
  
