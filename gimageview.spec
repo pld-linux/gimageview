@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_with	gtk1	# use gtk+ 1.2.x instead of 2.x.x
+%bcond_with	gtk1	# use GTK+ 1.2.x instead of 2.x.x
 #
 Summary:	Graphic Viewer
 Summary(pl):	Przegl±darka plików graficznych
