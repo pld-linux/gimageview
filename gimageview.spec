@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://west.dl.sourceforge.net/sourceforge/gtkmmviewer/%{name}-%{version}.tar.gz
+# Source0-md5:	d3294b7d485f311e237d9dc72924199c
 URL:		http://www.homa.ne.jp/~ashie/gimageview/
 BuildRequires:	gtk+-devel
 BuildRequires:  imlib-devel
