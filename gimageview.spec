@@ -5,12 +5,12 @@
 Summary:	Graphic Viewer
 Summary(pl):	Przegl±darka plików graficznych
 Name:		gimageview
-Version:	0.2.25
+Version:	0.2.26
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/gtkmmviewer/%{name}-%{version}.tar.gz
-# Source0-md5:	82874cd6fecdc9833ce3f5745b4bd788
+# Source0-md5:	7d8dc0e122aae6e0a108dba499fe6b69
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-gtk.patch
 Patch2:		%{name}-desktop.patch
@@ -19,6 +19,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bzip2-devel
 BuildRequires:	gettext-devel
+BuildRequires:	gnome-vfs2-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libmng-devel
 BuildRequires:	libpng-devel
@@ -59,7 +60,7 @@ przegl±darek obrazków i ma elastyczny interfejs u¿ytkownika.
 %prep
 %setup -q
 %patch0 -p1 
-%patch1 -p1
+#%patch1 -p1
 %patch2 -p1
 
 rm -f m4/{gettext.m4,libtool.m4}
