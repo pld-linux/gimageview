@@ -41,8 +41,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install prefix=$RPM_BUILD_ROOT%{_prefix}
 
-gzip -9nf AUTHORS ChangeLog README TIPS
-
 %find_lang %{name}
 
 %clean
@@ -50,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog README TIPS
 %attr(755,root,root) %{_bindir}/gimv
 %dir %{_datadir}/gimageview
 %dir %{_datadir}/gimageview/pixmaps
