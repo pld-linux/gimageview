@@ -9,12 +9,11 @@ Source0:	http://dl.sourceforge.net/sourceforge/gtkmmviewer/%{name}-%{version}.ta
 # Source0-md5:	d3294b7d485f311e237d9dc72924199c
 URL:		http://www.homa.ne.jp/~ashie/gimageview/
 BuildRequires:	gtk+-devel
-BuildRequires:  imlib-devel
+BuildRequires:	imlib-devel
 Requires:	glib >= 1.2.6
-Requires:  	gtk+ >= 1.2.6
+Requires:	gtk+ >= 1.2.6
 Requires:	imlib >= 1.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 GImageView is a GTK+ based image viewer. It support tabbed browsing,
