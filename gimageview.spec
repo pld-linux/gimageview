@@ -1,17 +1,18 @@
 Summary:	Graphic Viewer
 Summary(pl):	Przegl±darka plików graficznych
 Name:		gimageview
-Version:	0.2.1
-Release:	1
+Version:	0.2.25
+Release:	0.1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/sourceforge/gtkmmviewer/%{name}-%{version}.tar.gz
-# Source0-md5:	d3294b7d485f311e237d9dc72924199c
+# Source0-md5:	82874cd6fecdc9833ce3f5745b4bd788
 URL:		http://www.homa.ne.jp/~ashie/gimageview/
-BuildRequires:	gtk+-devel
+BuildRequires:	gtk+2-devel
 BuildRequires:	imlib-devel
+BuildRequires:	xcursor-devel
 Requires:	glib >= 1.2.6
-Requires:	gtk+ >= 1.2.6
+Requires:	gtk+2
 Requires:	imlib >= 1.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -31,7 +32,9 @@ przegl±darek obrazków i ma elastyczny interfejs u¿ytkownika.
 %setup -q
 
 %build
-%configure2_13
+
+%configure \
+	--with-gtk2
 
 %{__make}
 
@@ -39,7 +42,6 @@ przegl±darek obrazków i ma elastyczny interfejs u¿ytkownika.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	prefix=%{_prefix} \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{name}
