@@ -2,8 +2,6 @@
 # Conditional build:
 %bcond_with	gtk1	# use gtk+ 1.2.x instead of 2.x.x
 #
-# TODO: .desktop file
-#
 Summary:	Graphic Viewer
 Summary(pl):	Przegl±darka plików graficznych
 Name:		gimageview
@@ -11,18 +9,39 @@ Version:	0.2.25
 Release:	0.2
 License:	GPL
 Group:		X11/Applications/Multimedia
-Source0:	http://dl.sourceforge.net/sourceforge/gtkmmviewer/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/gtkmmviewer/%{name}-%{version}.tar.gz
 # Source0-md5:	82874cd6fecdc9833ce3f5745b4bd788
-URL:		http://www.homa.ne.jp/~ashie/gimageview/
 Patch0:		%{name}-DESTDIR.patch
-%{?with_gtk1:BuildRequires:	gtk+-devel >= 1.2.0}
-%{!?with_gtk1:BuildRequires:	gtk+2-devel >= 2.2.0}
-BuildRequires:	imlib-devel
-BuildRequires:	xcursor-devel
+Patch1:		%{name}-gtk.patch
+Patch2:		%{name}-desktop.patch
+URL:		http://www.homa.ne.jp/~ashie/gimageview/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	bzip2-devel
+BuildRequires:	gettext-devel
+BuildRequires:	libjpeg-devel
+BuildRequires:	libmng-devel
+BuildRequires:	libpng-devel
+BuildRequires:	libtool
+BuildRequires:	libwmf-devel >= 2:0.2.8
+BuildRequires:	xine-lib-devel >= 1:1.0
+BuildRequires:	zlib-devel
+%if %{with gtk1}
+BuildRequires:	glib-devel >= 1.2.6
+BuildRequires:	gnome-libs-devel >= 1.2.8
+BuildRequires:	gtk+-devel >= 1.2.6
+BuildRequires:	gdk-pixbuf-devel >= 0.8.0
+BuildRequires:	librsvg-devel >= 1.0.0
+BuildRequires:	libxml-devel
+Requires:	gdk-pixbuf >= 0.8.0
 Requires:	glib >= 1.2.6
-%{?with_gtk1:Requires:	gtk+-devel >= 1.2.0}
-%{!?with_gtk1:Requires:	gtk+2-devel >= 2.2.0}
-Requires:	imlib >= 1.9
+Requires:	gtk+ >= 1.2.6
+%else
+BuildRequires:	gtk+2-devel >= 2.0.0
+BuildRequires:	librsvg-devel >= 2.0
+BuildRequires:	pkgconfig
+%endif
+Requires:	libwmf >= 2:0.2.8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -32,7 +51,7 @@ thumbnail cache of other famous image viewers, and flexible user
 interface.
 
 %description -l pl
-GImageView to bazujaca na GTK+ przegl±darka obrazków. Pozwala na
+GImageView to oparta na GTK+ przegl±darka obrazków. Pozwala na
 przegl±danie z zak³adkami, przegl±danie miniaturek i drzew katalogów,
 obs³uguje drag-n-drop, potrafi odczytywaæ miniaturki z cache innych
 przegl±darek obrazków i ma elastyczny interfejs u¿ytkownika.
@@ -40,9 +59,18 @@ przegl±darek obrazków i ma elastyczny interfejs u¿ytkownika.
 %prep
 %setup -q
 %patch0 -p1 
+%patch1 -p1
+%patch2 -p1
+
+rm -f m4/{gettext.m4,libtool.m4}
 
 %build
-
+%{__gettextize}
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	%{!?with_gtk1:--with-gtk2}
 
@@ -52,7 +80,10 @@ przegl±darek obrazków i ma elastyczny interfejs u¿ytkownika.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	desktopdir=%{_desktopdir}
+
+rm -f $RPM_BUILD_ROOT%{_libdir}/gimageview/*/*.la
 
 %find_lang %{name}
 
@@ -71,3 +102,5 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/gimageview
 %dir %{_libdir}/gimageview/*
 %attr(755,root,root) %{_libdir}/gimageview/*/*.so
+%{_desktopdir}/gimageview.desktop
+%{_pixmapsdir}/gimv.png
