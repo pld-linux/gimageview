@@ -1,0 +1,170 @@
+--- gimageview-0.2.1/Makefile.am~	2004-07-16 04:34:14.000000000 +0000
++++ gimageview-0.2.1/Makefile.am	2004-07-16 04:34:14.000000000 +0000
+@@ -2,19 +2,19 @@
+ 
+ CLEANFILES = *~ .deps/* .*.swp .*.swo
+ 
+-#desktopdir = $(DESTDIR)$(datadir)/gnome/apps/Graphics
++#desktopdir = $(datadir)/gnome/apps/Graphics
+ #desktop_in_files = gimv.desktop.in
+ #desktop_DATA = $(desktop_in_files:.desktop.in=.desktop) 
+ #@XML_I18N_MERGE_DESKTOP_RULE@
+ 
+-prefsdir = $(DESTDIR)$(gimv_datadir)
++prefsdir = $(gimv_datadir)
+ prefs_DATA =		\
+ 	gtkrc
+ 
+-endocdir = $(DESTDIR)$(gimv_docdir)/text/C
++endocdir = $(gimv_docdir)/text/C
+ endoc_DATA = COPYING
+ 
+-jadocdir = $(DESTDIR)$(gimv_docdir)/text/ja
++jadocdir = $(gimv_docdir)/text/ja
+ jadoc_DATA =		\
+ 	COPYING.jp	\
+ 	ChangeLog.jp	\
+--- gimageview-0.2.1/Makefile.in~	2004-07-16 04:34:12.000000000 +0000
++++ gimageview-0.2.1/Makefile.in	2004-07-16 04:34:12.000000000 +0000
+@@ -128,19 +128,19 @@
+ 
+ CLEANFILES = *~ .deps/* .*.swp .*.swo
+ 
+-#desktopdir = $(DESTDIR)$(datadir)/gnome/apps/Graphics
++#desktopdir = $(datadir)/gnome/apps/Graphics
+ #desktop_in_files = gimv.desktop.in
+ #desktop_DATA = $(desktop_in_files:.desktop.in=.desktop) 
+ #@XML_I18N_MERGE_DESKTOP_RULE@
+ 
+-prefsdir = $(DESTDIR)$(gimv_datadir)
++prefsdir = $(gimv_datadir)
+ prefs_DATA =  	gtkrc
+ 
+ 
+-endocdir = $(DESTDIR)$(gimv_docdir)/text/C
++endocdir = $(gimv_docdir)/text/C
+ endoc_DATA = COPYING
+ 
+-jadocdir = $(DESTDIR)$(gimv_docdir)/text/ja
++jadocdir = $(gimv_docdir)/text/ja
+ jadoc_DATA =  	COPYING.jp		ChangeLog.jp		README.jp		INSTALL.jp		TIPS.jp
+ 
+ 
+--- gimageview-0.2.1/doc/Makefile.am~	2004-07-16 05:50:11.000000000 +0000
++++ gimageview-0.2.1/doc/Makefile.am	2004-07-16 05:50:11.000000000 +0000
+@@ -1,4 +1,4 @@
+-jahtmldir =  $(DESTDIR)$(gimv_docdir)/html/ja
++jahtmldir =  $(gimv_docdir)/html/ja
+ jahtml_DATA =			\
+ 	gimageview.css		\
+ 	gimageview.html		\
+@@ -15,7 +15,7 @@
+ 	gimageview-11.html	\
+ 	gimageview-12.html
+ 
+-jatextdir = $(DESTDIR)$(gimv_docdir)/text/ja
++jatextdir = $(gimv_docdir)/text/ja
+ jatext_DATA =		\
+ 	gimageview.txt
+ 
+--- gimageview-0.2.1/doc/Makefile.in~	2004-07-16 05:50:33.000000000 +0000
++++ gimageview-0.2.1/doc/Makefile.in	2004-07-16 05:50:33.000000000 +0000
+@@ -124,11 +124,11 @@
+ localedir = @localedir@
+ plugindir = @plugindir@
+ 
+-jahtmldir = $(DESTDIR)$(gimv_docdir)/html/ja
++jahtmldir = $(gimv_docdir)/html/ja
+ jahtml_DATA =  	gimageview.css			gimageview.html			gimageview-1.html		gimageview-2.html		gimageview-3.html		gimageview-4.html		gimageview-5.html		gimageview-6.html		gimageview-7.html		gimageview-8.html		gimageview-9.html		gimageview-10.html		gimageview-11.html		gimageview-12.html
+ 
+ 
+-jatextdir = $(DESTDIR)$(gimv_docdir)/text/ja
++jatextdir = $(gimv_docdir)/text/ja
+ jatext_DATA =  	gimageview.txt
+ 
+ 
+--- gimageview-0.2.1/src/pixmaps/Makefile.am~	2004-07-16 06:10:01.000000000 +0000
++++ gimageview-0.2.1/src/pixmaps/Makefile.am	2004-07-16 06:10:01.000000000 +0000
+@@ -1,4 +1,4 @@
+-default_icondir = $(DESTDIR)$(gimv_icondir)/default
++default_icondir = $(gimv_icondir)/default
+ 
+ default_icon_DATA =		\
+ 	alert.xpm		\
+--- gimageview-0.2.1/src/pixmaps/Makefile.in~	2004-07-16 06:09:57.000000000 +0000
++++ gimageview-0.2.1/src/pixmaps/Makefile.in	2004-07-16 06:09:57.000000000 +0000
+@@ -124,7 +124,7 @@
+ localedir = @localedir@
+ plugindir = @plugindir@
+ 
+-default_icondir = $(DESTDIR)$(gimv_icondir)/default
++default_icondir = $(gimv_icondir)/default
+ 
+ default_icon_DATA =  	alert.xpm			archive.xpm			back.xpm			close.xpm			dotfile.xpm			folder-go.xpm			folder-open.xpm			folder-link-open.xpm 		folder-up.xpm			folder.xpm 			folder-link.xpm 		folder48.xpm 			forward.xpm			fullscreen.xpm			gimageview.xpm			gimv_icon.xpm			image.xpm			home.xpm			leftarrow.xpm			nav_button.xpm 			nfolder.xpm			no_zoom.xpm			paper.xpm			prefs.xpm			question.xpm			refresh.xpm			resize.xpm			rightarrow.xpm			rotate.xpm			search.xpm			skip.xpm			small_archive.xpm		small_close.xpm			small_home.xpm			small_refresh.xpm		small_up.xpm			up.xpm				stop.xpm			up.xpm				zoom.xpm			zoom_fit.xpm			zoom_in.xpm			zoom_out.xpm			next_t.xpm			prev_t.xpm			ff.xpm				rw.xpm				play.xpm			pause.xpm			stop2.xpm			eject.xpm
+ 
+--- gimageview-0.2.1/plugins/archiver/Makefile.am~	2004-07-16 07:19:09.000000000 +0000
++++ gimageview-0.2.1/plugins/archiver/Makefile.am	2004-07-16 07:19:09.000000000 +0000
+@@ -4,7 +4,7 @@
+ 	libarc_tar_ext.la \
+ 	libarc_zip_ext.la
+ 
+-archiver_plugindir = $(DESTDIR)$(plugindir)/$(ARCHIVER_PLUGIN_DIR)
++archiver_plugindir = $(plugindir)/$(ARCHIVER_PLUGIN_DIR)
+ 
+ INCLUDES = -I$(top_srcdir)/src $(GTK_CFLAGS)
+ 
+--- gimageview-0.2.1/plugins/archiver/Makefile.in~	2004-07-16 07:19:15.000000000 +0000
++++ gimageview-0.2.1/plugins/archiver/Makefile.in	2004-07-16 07:19:15.000000000 +0000
+@@ -127,7 +127,7 @@
+ archiver_plugin_LTLIBRARIES =  	libarc_lha_ext.la 	libarc_rar_ext.la 	libarc_tar_ext.la 	libarc_zip_ext.la
+ 
+ 
+-archiver_plugindir = $(DESTDIR)$(plugindir)/$(ARCHIVER_PLUGIN_DIR)
++archiver_plugindir = $(plugindir)/$(ARCHIVER_PLUGIN_DIR)
+ 
+ INCLUDES = -I$(top_srcdir)/src $(GTK_CFLAGS)
+ 
+--- gimageview-0.2.1/plugins/image_saver/Makefile.am~	2004-07-16 07:19:37.000000000 +0000
++++ gimageview-0.2.1/plugins/image_saver/Makefile.am	2004-07-16 07:19:37.000000000 +0000
+@@ -3,7 +3,7 @@
+ 	libpnm_saver.la \
+ 	libxvpics_saver.la
+ 
+-image_saver_plugindir = $(DESTDIR)$(plugindir)/$(IMAGE_SAVER_PLUGIN_DIR)
++image_saver_plugindir = $(plugindir)/$(IMAGE_SAVER_PLUGIN_DIR)
+ 
+ INCLUDES = -I$(top_srcdir)/src $(GTK_CFLAGS)
+ 
+--- gimageview-0.2.1/plugins/image_saver/Makefile.in~	2004-07-16 07:19:54.000000000 +0000
++++ gimageview-0.2.1/plugins/image_saver/Makefile.in	2004-07-16 07:19:54.000000000 +0000
+@@ -127,7 +127,7 @@
+ image_saver_plugin_LTLIBRARIES =  	libpng_saver.la 	libpnm_saver.la 	libxvpics_saver.la
+ 
+ 
+-image_saver_plugindir = $(DESTDIR)$(plugindir)/$(IMAGE_SAVER_PLUGIN_DIR)
++image_saver_plugindir = $(plugindir)/$(IMAGE_SAVER_PLUGIN_DIR)
+ 
+ INCLUDES = -I$(top_srcdir)/src $(GTK_CFLAGS)
+ 
+--- gimageview-0.2.1/plugins/thumbnail/Makefile.am~	2004-07-16 07:20:05.000000000 +0000
++++ gimageview-0.2.1/plugins/thumbnail/Makefile.am	2004-07-16 07:20:05.000000000 +0000
+@@ -7,7 +7,7 @@
+ 	libee_thumb.la		\
+ 	libxvpics_thumb.la
+ 
+-thumbnail_plugindir = $(DESTDIR)$(plugindir)/$(THUMBNAIL_PLUGIN_DIR)
++thumbnail_plugindir = $(plugindir)/$(THUMBNAIL_PLUGIN_DIR)
+ 
+ INCLUDES = -I$(top_srcdir)/src $(GTK_CFLAGS)
+ 
+--- gimageview-0.2.1/plugins/thumbnail/Makefile.in~	2004-07-16 07:20:10.000000000 +0000
++++ gimageview-0.2.1/plugins/thumbnail/Makefile.in	2004-07-16 07:20:10.000000000 +0000
+@@ -127,7 +127,7 @@
+ thumbnail_plugin_LTLIBRARIES =  	libgimv_thumb.la		libnautilus_thumb.la		libkonqueror_thumb.la		libkonq_old_thumb.la		libgqview_thumb.la		libee_thumb.la			libxvpics_thumb.la
+ 
+ 
+-thumbnail_plugindir = $(DESTDIR)$(plugindir)/$(THUMBNAIL_PLUGIN_DIR)
++thumbnail_plugindir = $(plugindir)/$(THUMBNAIL_PLUGIN_DIR)
+ 
+ INCLUDES = -I$(top_srcdir)/src $(GTK_CFLAGS)
+ 
