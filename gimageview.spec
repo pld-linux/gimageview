@@ -38,7 +38,7 @@ Requires:	gdk-pixbuf >= 0.8.0
 Requires:	glib >= 1.2.6
 Requires:	gtk+ >= 1.2.6
 %else
-BuildRequires:	gtk+2-devel >= 2.0.0
+BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	librsvg-devel >= 2.0
 BuildRequires:	pkgconfig
 %endif
