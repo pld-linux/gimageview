@@ -1,5 +1,8 @@
+#
 # Conditional build:
 %bcond_with	gtk1	# use gtk+ 1.2.x instead of 2.x.x
+#
+# TODO: .desktop file
 #
 Summary:	Graphic Viewer
 Summary(pl):	Przegl±darka plików graficznych
@@ -11,6 +14,7 @@ Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/sourceforge/gtkmmviewer/%{name}-%{version}.tar.gz
 # Source0-md5:	82874cd6fecdc9833ce3f5745b4bd788
 URL:		http://www.homa.ne.jp/~ashie/gimageview/
+Patch0:		%{name}-DESTDIR.patch
 %{?with_gtk1:BuildRequires:	gtk+-devel >= 1.2.0}
 %{!?with_gtk1:BuildRequires:	gtk+2-devel >= 2.2.0}
 BuildRequires:	imlib-devel
@@ -35,6 +39,7 @@ przegl±darek obrazków i ma elastyczny interfejs u¿ytkownika.
 
 %prep
 %setup -q
+%patch0 -p1 
 
 %build
 
@@ -56,7 +61,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README TIPS
+%doc AUTHORS ChangeLog HACKING NEWS README TODO
+%doc %lang(ja) doc/ja/{ChangeLog,NEWS,README,TODO}.ja
 %attr(755,root,root) %{_bindir}/gimv
 %dir %{_datadir}/gimageview
 %dir %{_datadir}/gimageview/pixmaps
