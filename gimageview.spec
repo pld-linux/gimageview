@@ -38,7 +38,9 @@ przegl±darek obrazków i ma elastyczny interfejs u¿ytkownika.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install prefix=$RPM_BUILD_ROOT%{_prefix}
+%{__make} install \
+	prefix=%{_prefix} \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{name}
 
