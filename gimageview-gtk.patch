@@ -1,0 +1,11 @@
+--- gimageview-0.2.25/src/dirview2.c.orig	Thu Jul 24 17:33:03 2003
++++ gimageview-0.2.25/src/dirview2.c	Fri Jul 16 14:52:01 2004
+@@ -22,7 +22,7 @@
+  */
+ 
+ #ifndef GTK_DISABLE_DEPRECATED
+-#  define GTK_DISABLE_DEPRECATED
++/*#  define GTK_DISABLE_DEPRECATED*/
+ #endif /* GTK_DISABLE_DEPRECATED */
+ 
+ #include "dirview.h"
