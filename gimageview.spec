@@ -1,18 +1,23 @@
+# Conditional build:
+%bcond_with	gtk1	# use gtk+ 1.2.x instead of 2.x.x
+#
 Summary:	Graphic Viewer
 Summary(pl):	Przegl±darka plików graficznych
 Name:		gimageview
 Version:	0.2.25
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/sourceforge/gtkmmviewer/%{name}-%{version}.tar.gz
 # Source0-md5:	82874cd6fecdc9833ce3f5745b4bd788
 URL:		http://www.homa.ne.jp/~ashie/gimageview/
-BuildRequires:	gtk+2-devel
+%{?with_gtk1:BuildRequires:	gtk+-devel >= 1.2.0}
+%{!?with_gtk1:BuildRequires:	gtk+2-devel >= 2.2.0}
 BuildRequires:	imlib-devel
 BuildRequires:	xcursor-devel
 Requires:	glib >= 1.2.6
-Requires:	gtk+2
+%{?with_gtk1:Requires:	gtk+-devel >= 1.2.0}
+%{!?with_gtk1:Requires:	gtk+2-devel >= 2.2.0}
 Requires:	imlib >= 1.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,7 +39,7 @@ przegl±darek obrazków i ma elastyczny interfejs u¿ytkownika.
 %build
 
 %configure \
-	--with-gtk2
+	%{!?with_gtk1:--with-gtk2}
 
 %{__make}
 
