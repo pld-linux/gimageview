@@ -7,6 +7,7 @@ License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/sourceforge/gtkmmviewer/%{name}-%{version}.tar.gz
 # Source0-md5:	d3294b7d485f311e237d9dc72924199c
+Patch0:		%{name}-DESTDIR.patch
 URL:		http://www.homa.ne.jp/~ashie/gimageview/
 BuildRequires:	gtk+-devel
 BuildRequires:	imlib-devel
@@ -29,6 +30,7 @@ przegl±darek obrazków i ma elastyczny interfejs u¿ytkownika.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure2_13
@@ -49,7 +51,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README TIPS
+%doc AUTHORS ChangeLog
+%doc %lang(ja) README.jp TIPS.jp TODO
 %attr(755,root,root) %{_bindir}/gimv
 %dir %{_datadir}/gimageview
 %dir %{_datadir}/gimageview/pixmaps
