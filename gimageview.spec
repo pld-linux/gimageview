@@ -14,7 +14,6 @@ Requires:  	gtk+ >= 1.2.6
 Requires:	imlib >= 1.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 GImageView is a GTK+ based image viewer. It support tabbed browsing,
