@@ -5,12 +5,12 @@
 Summary:	Graphic Viewer
 Summary(pl):	Przegl±darka plików graficznych
 Name:		gimageview
-Version:	0.2.26
+Version:	0.2.27
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/gtkmmviewer/%{name}-%{version}.tar.gz
-# Source0-md5:	7d8dc0e122aae6e0a108dba499fe6b69
+# Source0-md5:	878a272bae2d79c899a597f9d1dd8078
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-gtk.patch
 Patch2:		%{name}-desktop.patch
