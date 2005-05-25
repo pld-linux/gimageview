@@ -25,6 +25,7 @@ BuildRequires:	libmng-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtool
 BuildRequires:	libwmf-devel >= 2:0.2.8
+BuildRequires:	popt-devel
 BuildRequires:	xine-lib-devel >= 1:1.0
 BuildRequires:	zlib-devel
 %if %{with gtk1}
