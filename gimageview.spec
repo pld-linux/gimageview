@@ -3,7 +3,7 @@
 %bcond_with	gtk1	# use GTK+ 1.2.x instead of 2.x.x
 #
 Summary:	Graphic Viewer
-Summary(pl):	Przegl±darka plików graficznych
+Summary(pl.UTF-8):   PrzeglÄ…darka plikÃ³w graficznych
 Name:		gimageview
 Version:	0.2.27
 Release:	1
@@ -52,11 +52,11 @@ thumbnail table views, directory tree views, drag and drop, reading
 thumbnail cache of other famous image viewers, and flexible user
 interface.
 
-%description -l pl
-GImageView to oparta na GTK+ przegl±darka obrazków. Pozwala na
-przegl±danie z zak³adkami, przegl±danie miniaturek i drzew katalogów,
-obs³uguje drag-n-drop, potrafi odczytywaæ miniaturki z cache innych
-przegl±darek obrazków i ma elastyczny interfejs u¿ytkownika.
+%description -l pl.UTF-8
+GImageView to oparta na GTK+ przeglÄ…darka obrazkÃ³w. Pozwala na
+przeglÄ…danie z zakÅ‚adkami, przeglÄ…danie miniaturek i drzew katalogÃ³w,
+obsÅ‚uguje drag-n-drop, potrafi odczytywaÄ‡ miniaturki z cache innych
+przeglÄ…darek obrazkÃ³w i ma elastyczny interfejs uÅ¼ytkownika.
 
 %prep
 %setup -q
