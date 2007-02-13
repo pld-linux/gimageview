@@ -3,7 +3,7 @@
 %bcond_with	gtk1	# use GTK+ 1.2.x instead of 2.x.x
 #
 Summary:	Graphic Viewer
-Summary(pl.UTF-8):   Przeglądarka plików graficznych
+Summary(pl.UTF-8):	Przeglądarka plików graficznych
 Name:		gimageview
 Version:	0.2.27
 Release:	1
